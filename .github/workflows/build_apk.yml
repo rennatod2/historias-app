@@ -1,13 +1,6 @@
-name: Build APK
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # <- Altere aqui (antes era ubuntu-24.04)
 
     steps:
       - name: Checkout code
@@ -25,7 +18,7 @@ jobs:
         run: flutter build apk
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v2
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
