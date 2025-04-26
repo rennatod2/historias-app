@@ -1,6 +1,13 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # <- Altere aqui (antes era ubuntu-24.04)
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
